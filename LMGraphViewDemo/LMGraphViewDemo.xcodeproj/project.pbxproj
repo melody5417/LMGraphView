@@ -19,6 +19,8 @@
 		5CF204C61B637A3800AF1D7B /* LMGraphPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF204BC1B637A3800AF1D7B /* LMGraphPointView.m */; };
 		5CF204C71B637A3800AF1D7B /* LMLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF204BE1B637A3800AF1D7B /* LMLineGraphView.m */; };
 		5CF204C81B637A3800AF1D7B /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF204C11B637A3800AF1D7B /* PopoverView.m */; };
+		A756E36E240526CC00848507 /* LMGraphLegendView.m in Sources */ = {isa = PBXBuildFile; fileRef = A756E36D240526CC00848507 /* LMGraphLegendView.m */; };
+		A756E371240552FF00848507 /* LMGraphLegend.m in Sources */ = {isa = PBXBuildFile; fileRef = A756E370240552FF00848507 /* LMGraphLegend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,10 @@
 		5CF204C11B637A3800AF1D7B /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
 		5CF204C21B637A3800AF1D7B /* PopoverView_Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView_Configuration.h; sourceTree = "<group>"; };
 		5CF204C31B637A3800AF1D7B /* PopoverViewCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewCompatibility.h; sourceTree = "<group>"; };
+		A756E36C240526CC00848507 /* LMGraphLegendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMGraphLegendView.h; sourceTree = "<group>"; };
+		A756E36D240526CC00848507 /* LMGraphLegendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMGraphLegendView.m; sourceTree = "<group>"; };
+		A756E36F240552FF00848507 /* LMGraphLegend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMGraphLegend.h; sourceTree = "<group>"; };
+		A756E370240552FF00848507 /* LMGraphLegend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMGraphLegend.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,10 @@
 				5CF204BA1B637A3800AF1D7B /* LMGraphPoint.m */,
 				5CF204BB1B637A3800AF1D7B /* LMGraphPointView.h */,
 				5CF204BC1B637A3800AF1D7B /* LMGraphPointView.m */,
+				A756E36F240552FF00848507 /* LMGraphLegend.h */,
+				A756E370240552FF00848507 /* LMGraphLegend.m */,
+				A756E36C240526CC00848507 /* LMGraphLegendView.h */,
+				A756E36D240526CC00848507 /* LMGraphLegendView.m */,
 				5CF204BF1B637A3800AF1D7B /* Vender */,
 			);
 			name = LMGraphView;
@@ -171,6 +181,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -205,7 +216,9 @@
 				5CF204C51B637A3800AF1D7B /* LMGraphPoint.m in Sources */,
 				5CF204961B6378D700AF1D7B /* LMViewController.m in Sources */,
 				5CF204C71B637A3800AF1D7B /* LMLineGraphView.m in Sources */,
+				A756E371240552FF00848507 /* LMGraphLegend.m in Sources */,
 				5CF204C61B637A3800AF1D7B /* LMGraphPointView.m in Sources */,
+				A756E36E240526CC00848507 /* LMGraphLegendView.m in Sources */,
 				5CF204931B6378D700AF1D7B /* LMAppDelegate.m in Sources */,
 				5CF204C41B637A3800AF1D7B /* LMGraphPlot.m in Sources */,
 				5CF204C81B637A3800AF1D7B /* PopoverView.m in Sources */,

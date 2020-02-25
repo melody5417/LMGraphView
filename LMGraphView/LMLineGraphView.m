@@ -43,6 +43,7 @@
 @property (nonatomic, strong) UILabel *yAxisUnitLabel;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *noDataTextLabel;
+@property (nonatomic, strong) UIView *legendContainerView;
 
 @property (nonatomic, strong) CAShapeLayer *xAxisZeroLayer;
 @property (nonatomic, strong) CAShapeLayer *xAxisGridLayer;
@@ -155,6 +156,24 @@
     self.yAxisUnitLabel.text = self.yAxisUnit;
     self.yAxisUnitLabel.hidden = (self.yAxisUnit == nil);
     
+    // Legend View
+    if (self.graphLegends.count > 0) {
+        self.layout.legendHidden = self.graphLegends.count == 0;
+        if (!self.legendContainerView) {
+            self.legendContainerView = [UIView new];
+#if DEBUG_MODE
+            self.legendContainerView.backgroundColor = [UIColor lightGrayColor];
+#else
+            self.legendContainerView.backgroundColor = [UIColor lightGrayColor];
+#endif
+            [self addSubview:self.legendContainerView];
+        }
+        self.legendContainerView.frame = CGRectMake(0,
+                                                    H(self) - 40,
+                                                    W(self),
+                                                    40);
+    }
+    
     // Content Scroll View
     if (!self.contentScrollView) {
         self.contentScrollView = [[UIScrollView alloc] init];
@@ -174,7 +193,7 @@
     self.contentScrollView.frame = CGRectMake(contentX,
                                               contentY,
                                               W(self) - contentX - self.layout.xAxisMargin,
-                                              H(self) - contentY);
+                                              H(self) - contentY - H(self.legendContainerView));
     self.contentScrollView.contentSize = CGSizeMake(contentSizeWidth, H(self.contentScrollView));
     
     // Graph Content View
@@ -231,6 +250,9 @@
         // Draw XY Axis
         [self drawXYAxis];
         
+        // Draw legends
+        [self drawLegends];
+        
         // Draw plots
         [self drawPlots];
     }
@@ -267,6 +289,25 @@
     // Y Axis Grid
     if (!self.layout.yAxisGridHidden) {
         [self drawYAxisGrid];
+    }
+}
+
+- (void)drawLegends {
+    if (self.layout.legendHidden) { return; }
+    CGFloat width = W(self.legendContainerView) / self.graphLegends.count;
+    CGFloat height = 40;
+    
+    [[self.legendContainerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    for (LMGraphLegend *legend in self.graphLegends) {
+        CGFloat contentX = 0;
+        NSUInteger index = [self.graphLegends indexOfObject:legend];
+        CGRect frame = CGRectMake(contentX + width * index,
+                                  CGRectGetMidY(self.legendContainerView.bounds) - height/2.0,
+                                  width,
+                                  height);
+        LMGraphLegendView *view = [[LMGraphLegendView alloc] initWithFrame:frame title:legend.title color:legend.color];
+        [self.legendContainerView addSubview:view];
     }
 }
 

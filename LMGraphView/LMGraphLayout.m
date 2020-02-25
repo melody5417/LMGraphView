@@ -53,6 +53,10 @@
         _movementLineWidth = 2;
         _movementLineColor = [UIColor lightGrayColor];
         _movementDotColor = [UIColor redColor];
+        
+        _legendHidden = YES;
+        _legendWidth = 0;
+        _legendHeight = 0;
     }
     return self;
 }

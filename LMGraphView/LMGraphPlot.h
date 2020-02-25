@@ -17,6 +17,8 @@
 @property (nonatomic, strong) UIColor *strokeColor;
 @property (nonatomic, assign) CGFloat lineWidth;
 
+@property (nonatomic, copy) NSString *title;
+
 @property (nonatomic, assign) CGFloat graphPointSize;
 @property (nonatomic, strong) UIColor *graphPointColor;
 @property (nonatomic, strong) UIColor *graphPointHighlightColor;

@@ -51,4 +51,8 @@
 @property (nonatomic, strong) UIColor *movementLineColor;
 @property (nonatomic, strong) UIColor *movementDotColor;
 
+@property (nonatomic, assign) BOOL legendHidden;
+@property (nonatomic, assign) CGFloat legendWidth;
+@property (nonatomic, assign) CGFloat legendHeight;
+
 @end

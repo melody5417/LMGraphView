@@ -17,6 +17,7 @@
         _fillColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
         _strokeColor = [UIColor clearColor];
         _lineWidth = 2;
+        _title = @"图例";
         
         _graphPointSize = 10;
         _graphPointColor = [UIColor whiteColor];

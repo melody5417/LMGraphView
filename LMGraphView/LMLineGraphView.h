@@ -12,6 +12,8 @@
 #import "LMGraphPoint.h"
 #import "PopoverView.h"
 #import "LMGraphLayout.h"
+#import "LMGraphLegend.h"
+#import "LMGraphLegendView.h"
 
 @protocol LMLineGraphViewDelegate;
 
@@ -23,6 +25,7 @@
 @property (nonatomic, assign) CGFloat yAxisMaxValue;
 @property (nonatomic, assign) CGFloat yAxisMinValue;
 @property (nonatomic, strong) NSArray *graphPlots;
+@property (nonatomic, strong) NSArray *graphLegends;
 
 @property (nonatomic, strong) NSString *yAxisSuffix;
 @property (nonatomic, strong) NSString *yAxisUnit;

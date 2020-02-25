@@ -29,11 +29,15 @@
     
     // Generate sample data
     NSArray *xAxisValues = [self xAxisValues];
-    NSArray *shortXAxisValues = [self shortXAxisValues];
     LMGraphPlot *plot1 = [self sampleGraphPlot1];
     LMGraphPlot *plot2 = [self sampleGraphPlot2];
     LMGraphPlot *plot3 = [self sampleGraphPlot3];
     LMGraphPlot *plot4 = [self sampleGraphPlot4];
+    
+    LMGraphLegend *legend1 = LMGraphLegendMake(@"图例1", [UIColor colorWithRed:11.0/255 green:150.0/255 blue:246.0/255 alpha:0.9]);
+    LMGraphLegend *legend2 = LMGraphLegendMake(@"图例2", [UIColor colorWithRed:255/255.0 green:130/255.0 blue:166/255.0 alpha:0.9]);
+    LMGraphLegend *legend3 = LMGraphLegendMake(@"图例3", [UIColor brownColor]);
+    LMGraphLegend *legend4 = LMGraphLegendMake(@"图例4", [UIColor whiteColor]);
     
     // Line Graph View 1
     self.lineGraphView1.layout.xAxisScrollableOnly = YES;
@@ -42,8 +46,10 @@
     self.lineGraphView1.yAxisUnit = @"(customer)";
     self.lineGraphView1.title = @"MONTHLY CUSTOMER";
     self.lineGraphView1.graphPlots = @[plot1, plot2];
+    self.lineGraphView1.graphLegends = @[legend1, legend2];
     
     // Line Graph View 2
+    NSArray *shortXAxisValues = [self shortXAxisValues];
     self.lineGraphView2.layout.xAxisScrollableOnly = NO;
     self.lineGraphView2.layout.drawMovement = NO;
     self.lineGraphView2.xAxisValues = shortXAxisValues;
